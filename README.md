@@ -37,7 +37,7 @@ This will place the files inside the `data/raw/` directory.
 │
 ├── src/                  # Source code
 │   ├── preprocessing.py  # Text cleaning, tokenization, etc.
-│   ├── models.py         # Model architectures (RNN, Transformer, etc.)
+│   ├── models.py         # Model architectures
 │   ├── train.py          # Training loop
 │   ├── evaluate.py       # Evaluation scripts
 │   └── utils.py          # Helper functions

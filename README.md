@@ -4,17 +4,15 @@ This project explores **automatic language identification** using deep learning 
 
 The goal is to build a model that can correctly classify the language of a given text sample.
 
----
+## Features
 
-## 🚀 Features
 - Preprocessing of multilingual text data
 - Blablabla
 - Evaluation on multiple languages with NLP metrics
 
----
+## Project Structure
 
-## 📂 Project Structure
-
+```text
 ├── data/                 # Datasets (raw and processed)
 │   ├── raw/              # Original data
 │   └── processed/        # Cleaned/preprocessed data

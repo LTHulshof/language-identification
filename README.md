@@ -10,6 +10,24 @@ The goal is to build a model that can correctly classify the language of a given
 - Blablabla
 - Evaluation on multiple languages with NLP metrics
 
+## Dataset
+
+This project uses the [WiLI-2018 dataset](https://zenodo.org/records/841984), a publicly available dataset for **written language identification** covering 235 languages.
+
+### Option 1: Quick Setup (recommended)
+Run the downloader script to fetch and extract the dataset automatically:
+
+```bash
+python download_data.py
+```
+
+This will place the files inside the `data/raw/` directory.
+
+### Option 2: Manuel Setup
+1. Download the dataset from [Zenodo](https://zenodo.org/records/841984).
+2. Extract the archive.
+3. Place the files inside the `data/raw/` directory of this project:
+
 ## Project Structure
 
 ```text

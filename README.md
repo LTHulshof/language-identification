@@ -23,7 +23,7 @@ python download_data.py
 
 This will place the files inside the `data/raw/` directory.
 
-### Option 2: Manuel Setup
+### Option 2: Manual Setup
 1. Download the dataset from [Zenodo](https://zenodo.org/records/841984).
 2. Extract the archive.
 3. Place the files inside the `data/raw/` directory of this project.

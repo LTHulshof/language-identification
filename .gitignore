@@ -1,0 +1,49 @@
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.pkl
+*.pickle
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# ----------------------------
+# Data & Results
+# ----------------------------
+# Raw and processed data
+data/
+# Model outputs, logs, checkpoints
+results/
+checkpoints/
+logs/
+
+# Large compressed files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# ----------------------------
+# IDE / Editor
+# ----------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ----------------------------
+# OS Files
+# ----------------------------
+.DS_Store
+Thumbs.db

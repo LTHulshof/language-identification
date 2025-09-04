@@ -1,6 +1,6 @@
 ##########################################
-# preprocessing.py
+# train.py
 # 
-# File for preprocessing blabla
+# File for main training loop blabla
 #
 ##########################################

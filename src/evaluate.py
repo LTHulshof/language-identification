@@ -1,6 +1,6 @@
 ##########################################
-# preprocessing.py
+# evaluate.py
 # 
-# File for preprocessing blabla
+# File for evaluation of results blabla
 #
 ##########################################

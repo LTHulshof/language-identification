@@ -1,6 +1,7 @@
 ##########################################
-# preprocessing.py
+# models.py
 # 
-# File for preprocessing blabla
+# File for model itself with all the deep
+# learning methods blabla
 #
 ##########################################

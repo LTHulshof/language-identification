@@ -1,6 +1,7 @@
 ##########################################
-# preprocessing.py
+# utils.py
 # 
-# File for preprocessing blabla
+# File for extra necessary stuff just to
+# keep things clean blabla
 #
 ##########################################

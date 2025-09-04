@@ -13,7 +13,7 @@ The goal is to build a model that can correctly classify the language of a given
 ## Project Structure
 
 ```text
-├── data/                 # Datasets (raw and processed)
+├── data/                 # Dataset (raw and processed)
 │   ├── raw/              # Original data
 │   └── processed/        # Cleaned/preprocessed data
 │
@@ -28,5 +28,6 @@ The goal is to build a model that can correctly classify the language of a given
 │
 ├── results/              # Saved models, logs, evaluation outputs
 │
+├── download_data.py      # Download dataset
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation

@@ -26,7 +26,7 @@ This will place the files inside the `data/raw/` directory.
 ### Option 2: Manuel Setup
 1. Download the dataset from [Zenodo](https://zenodo.org/records/841984).
 2. Extract the archive.
-3. Place the files inside the `data/raw/` directory of this project:
+3. Place the files inside the `data/raw/` directory of this project.
 
 ## Project Structure
 

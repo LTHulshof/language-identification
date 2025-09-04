@@ -46,6 +46,8 @@ This will place the files inside the `data/raw/` directory.
 │
 ├── results/              # Saved models, logs, evaluation outputs
 │
+├── main.py               # Main execute file
 ├── download_data.py      # Download dataset
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation
+```

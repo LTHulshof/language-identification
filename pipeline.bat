@@ -1,3 +1,6 @@
+REM Download dataset
+python download_data.py
+
 cd src
 
 REM Filter dataset

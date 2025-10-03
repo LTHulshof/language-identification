@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# REM Download dataset
+python download_data.py
+
 cd src
 
 # Filter dataset

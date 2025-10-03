@@ -31,23 +31,23 @@ This will place the files inside the `data/raw/` directory.
 ## Project Structure
 
 ```text
-├── data/                 # Dataset (raw and processed)
-│   ├── raw/              # Original data
-│   └── processed/        # Cleaned/preprocessed data
+├── data/                       # Dataset (raw and processed)
+│   ├── wili-2018/              # Original data
+│   └── wili_preprocessed/      # Cleaned/preprocessed data
 │
-├── src/                  # Source code
-│   ├── preprocessing.py  # Text cleaning, tokenization, etc.
-│   ├── models.py         # Model architectures
-│   ├── train.py          # Training loop
-│   ├── evaluate.py       # Evaluation scripts
-│   └── utils.py          # Helper functions
+├── src/                        # Source code
+│   ├── preprocessing.py        # Text cleaning, tokenization, etc.
+│   ├── models.py               # Model architectures
+│   ├── train.py                # Training loop
+│   ├── evaluate.py             # Evaluation scripts
+│   └── utils.py                # Helper functions for training
 │
-├── notebooks/            # Jupyter notebooks for exploration & experiments
+├── notebooks/                  # Jupyter notebooks for exploration & experiments
 │
-├── results/              # Saved models, logs, evaluation outputs
+├── results/                    # Saved models, logs, evaluation outputs
 │
-├── main.py               # Main execute file
-├── download_data.py      # Download dataset
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
+├── pipeline.bat/pipeline.sh    # Main execute file
+├── download_data.py            # Download dataset
+├── requirements.txt            # Python dependencies
+└── README.md                   # Project documentation
 ```

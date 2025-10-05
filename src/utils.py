@@ -2,6 +2,9 @@
 Script containing helper functions for train.py
 """
 
+import numpy as np
+from sklearn.metrics import accuracy_score, f1_score
+
 def load_data(x_path, y_path):
     """
     Load training data into lists

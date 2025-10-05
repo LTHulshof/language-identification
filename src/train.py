@@ -21,10 +21,10 @@ SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SRC_DIR, "..", "data", "wili-preprocessed")
 MODEL_DIR = os.path.join(SRC_DIR, "..", "model", "roberta-finetuned")
 
-train_texts_path = os.path.join(DATA_DIR, "x_train_n50.txt")
-train_labels_path = os.path.join(DATA_DIR, "y_train_n50.txt")
-eval_texts_path = os.path.join(DATA_DIR, "x_eval_n50.txt")
-eval_labels_path = os.path.join(DATA_DIR, "y_eval_n50.txt")
+train_texts_path = os.path.join(DATA_DIR, "x_train_orig.txt")
+train_labels_path = os.path.join(DATA_DIR, "y_train_orig.txt")
+eval_texts_path = os.path.join(DATA_DIR, "x_eval_orig.txt")
+eval_labels_path = os.path.join(DATA_DIR, "y_eval_orig.txt")
 
 
 # Load raw data

@@ -95,7 +95,6 @@ def filter_and_split_test_eval():
         yf.write("\n".join(test_labels))
 
 
-
 if __name__ == "__main__":
     filter_train()
     filter_and_split_test_eval()

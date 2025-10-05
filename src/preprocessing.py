@@ -202,47 +202,102 @@ def process_and_translate(x_file, y_file, out_prefix, replace_nouns=True, replac
     print(f"Saved {x_out} and {y_out}")
 
 
-# Training data preprocessing
-process_and_translate(
-    os.path.join(WILI_SUBSET_DIR, "x_train.txt"),
-    os.path.join(WILI_SUBSET_DIR, "y_train.txt"),
-    out_prefix="x_train",
-    replace_nouns=True,
-    replace_spans=False,
-    replace_noun_freq=0.5,
-    replace_span_freq=0.4
-)
+# # Training data preprocessing- easy
+# process_and_translate(
+#     os.path.join(WILI_SUBSET_DIR, "x_train.txt"),
+#     os.path.join(WILI_SUBSET_DIR, "y_train.txt"),
+#     out_prefix="x_train",
+#     replace_nouns=False,
+#     replace_spans=False,
+#     replace_noun_freq=0.0,
+#     replace_span_freq=0.0
+# )
 
-# Evaluation data preprocessing
+# # Training data preprocessing - medium
+# process_and_translate(
+#     os.path.join(WILI_SUBSET_DIR, "x_train.txt"),
+#     os.path.join(WILI_SUBSET_DIR, "y_train.txt"),
+#     out_prefix="x_train",
+#     replace_nouns=True,
+#     replace_spans=False,
+#     replace_noun_freq=0.5,
+#     replace_span_freq=0.0
+# )
+
+
+# # Training data preprocessing - hard
+# process_and_translate(
+#     os.path.join(WILI_SUBSET_DIR, "x_train.txt"),
+#     os.path.join(WILI_SUBSET_DIR, "y_train.txt"),
+#     out_prefix="x_train",
+#     replace_nouns=True,
+#     replace_spans=True,
+#     replace_noun_freq=0.5,
+#     replace_span_freq=1
+# )
+
+
+
+# Evaluation data preprocessing - easy
 process_and_translate(
     os.path.join(WILI_SUBSET_DIR, "x_eval.txt"),
     os.path.join(WILI_SUBSET_DIR, "y_eval.txt"),
     out_prefix="x_eval",
-    replace_nouns=True,
-    replace_spans=False,
-    replace_noun_freq=0.5,
-    replace_span_freq=0.4
-)
-
-# Testing data preprocessing
-process_and_translate(
-    os.path.join(WILI_SUBSET_DIR, "x_test.txt"),
-    os.path.join(WILI_SUBSET_DIR, "y_test.txt"),
-    out_prefix="x_test",
     replace_nouns=False,
-    replace_spans=True,
-    replace_noun_freq=0.5,
-    replace_span_freq=0.4
+    replace_spans=False,
+    replace_noun_freq=0.0,
+    replace_span_freq=0.0
 )
 
-# Additional data generation to check translation span performance.
-for i in [0.0, 0.2, 0.4, 0.6, 0.8, 1]:
-    process_and_translate(
-        os.path.join(WILI_SUBSET_DIR, "x_test.txt"),
-        os.path.join(WILI_SUBSET_DIR, "y_test.txt"),
-        out_prefix="x_test",
-        replace_nouns=False,
-        replace_spans=True,
-        replace_noun_freq=0.5,
-        replace_span_freq=i
-    )
+# # Evaluation data preprocessing - medium
+# process_and_translate(
+#     os.path.join(WILI_SUBSET_DIR, "x_eval.txt"),
+#     os.path.join(WILI_SUBSET_DIR, "y_eval.txt"),
+#     out_prefix="x_eval",
+#     replace_nouns=True,
+#     replace_spans=False,
+#     replace_noun_freq=0.5,
+#     replace_span_freq=0.0
+# )
+
+
+# # Evaluation data preprocessing  - hard
+# process_and_translate(
+#     os.path.join(WILI_SUBSET_DIR, "x_eval.txt"),
+#     os.path.join(WILI_SUBSET_DIR, "y_eval.txt"),
+#     out_prefix="x_eval",
+#     replace_nouns=True,
+#     replace_spans=True,
+#     replace_noun_freq=0.5,
+#     replace_span_freq=1
+# )
+
+
+
+
+
+
+
+
+# # Testing data preprocessing
+# process_and_translate(
+#     os.path.join(WILI_SUBSET_DIR, "x_test.txt"),
+#     os.path.join(WILI_SUBSET_DIR, "y_test.txt"),
+#     out_prefix="x_test",
+#     replace_nouns=False,
+#     replace_spans=True,
+#     replace_noun_freq=0.5,
+#     replace_span_freq=0.4
+# )
+
+# # Additional data generation to check translation span performance.
+# for i in [0.0, 0.2, 0.4, 0.6, 0.8, 1]:
+#     process_and_translate(
+#         os.path.join(WILI_SUBSET_DIR, "x_test.txt"),
+#         os.path.join(WILI_SUBSET_DIR, "y_test.txt"),
+#         out_prefix="x_test",
+#         replace_nouns=False,
+#         replace_spans=True,
+#         replace_noun_freq=0.5,
+#         replace_span_freq=i
+#     )

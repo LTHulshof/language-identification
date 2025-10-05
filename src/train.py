@@ -1,4 +1,6 @@
-# Script for finetuning a roberta model on the wili-2018 dataset
+"""
+Script for finetuning a roberta model on the preprocessed wili-2018 dataset
+"""
 
 import os
 from datasets import Dataset

@@ -1,13 +1,22 @@
-# Script containing helper functions for train.py
+"""
+Script containing helper functions for train.py
+"""
 
 def load_data(x_path, y_path):
+    """
+    Load training data into lists
+    """
     with open(x_path, encoding="utf-8") as f_x, open(y_path, encoding="utf-8") as f_y:
         texts = [line.strip().split() for line in f_x]
         labels = [line.strip().split() for line in f_y]
     return texts, labels
 
 
+
 def tokenize_and_align_labels(examples, tokenizer):
+    """
+    Tokenize the datapoints into sub-word tokens using the (roberta by default) tokenizer
+    """
     tokenized_inputs = tokenizer(
         examples["tokens"],
         truncation=True,
@@ -35,6 +44,9 @@ def tokenize_and_align_labels(examples, tokenizer):
     return tokenized_inputs
 
 def compute_metrics(p):
+    """
+    Compute metrics on evaluation data during training
+    """
     predictions, labels = p
     predictions = np.argmax(predictions, axis=2)
 

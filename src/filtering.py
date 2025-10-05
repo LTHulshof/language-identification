@@ -1,3 +1,7 @@
+"""
+Script for reducing the wili-2018 dataset to datapoints to only contain desired languages. Split up into train, evaluation and testing data.
+"""
+
 import os
 import random
 from collections import defaultdict
@@ -10,8 +14,12 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 TARGET_LANGS = {"deu", "spa", "nld", "ell", "eng"}
 
-# Filter and save training set
+
+
 def filter_train():
+    """
+    Filter and save the training set
+    """
     x_path = os.path.join(DATA_DIR, "x_train.txt")
     y_path = os.path.join(DATA_DIR, "y_train.txt")
 
@@ -35,8 +43,12 @@ def filter_train():
 
     print(f"Saved {len(filtered_texts)} train samples")
 
-# Filter, split, and shuffle test set
+
+
 def filter_and_split_test_eval():
+    """
+    Filter, split, and shuffle the test set
+    """
     x_path = os.path.join(DATA_DIR, "x_test.txt")
     y_path = os.path.join(DATA_DIR, "y_test.txt")
 
@@ -83,9 +95,9 @@ def filter_and_split_test_eval():
     with open(os.path.join(OUTPUT_DIR, "y_test.txt"), "w", encoding="utf-8") as yf:
         yf.write("\n".join(test_labels))
 
-    print(f"Saved {len(eval_texts)} eval samples, {len(test_texts)} test samples (randomized)")
 
 
 if __name__ == "__main__":
     filter_train()
     filter_and_split_test_eval()
+    print("Saved filtered data")

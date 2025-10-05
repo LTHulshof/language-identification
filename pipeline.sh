@@ -1,9 +1,8 @@
 #!/bin/bash
+cd src
 
 # REM Download dataset
 python download_data.py
-
-cd src
 
 # Filter dataset
 python filtering.py

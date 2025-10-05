@@ -15,7 +15,6 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 TARGET_LANGS = {"deu", "spa", "nld", "ell", "eng"}
 
 
-
 def filter_train():
     """
     Filter and save the training set

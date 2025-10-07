@@ -9,8 +9,8 @@ from tqdm import tqdm
 
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.abspath(os.path.join(SRC_DIR, "..", "data", "wili-preprocessed"))
-X_FILE = os.path.join(DATA_DIR, "x_test_n50.txt")
-Y_FILE = os.path.join(DATA_DIR, "y_test_n50.txt")
+X_FILE = os.path.join(DATA_DIR, "x_test_n50_s50.txt")
+Y_FILE = os.path.join(DATA_DIR, "y_test_n50_s50.txt")
 
 OUTPUT_PREFIX = "x_test_mixed_sentences_n50"
 
@@ -23,6 +23,7 @@ NO_REUSE = True            # Do not reuse the same source sentence inside one mi
 ALLOW_DUP_LANG = True      # Allow multiple sentences of the same language in one mixed datapoint
 
 RANDOM_SEED = 42           # Seed for reproducibility
+
 
 
 def split_into_sentences(x_line, y_line):
@@ -47,11 +48,12 @@ def split_into_sentences(x_line, y_line):
             sentences.append({"tokens": s_tokens, "labels": s_labels, "lang": maj_label})
     return sentences
 
+
+
 def load_xy_by_sentence(x_path, y_path):
     with open(x_path, encoding="utf-8") as fx, open(y_path, encoding="utf-8") as fy:
         x_lines = [l.strip() for l in fx if l.strip()]
         y_lines = [l.strip() for l in fy if l.strip()]
-    assert len(x_lines) == len(y_lines), "x and y must have same number of non-empty lines"
 
     all_sentences = []
     for x, y in zip(x_lines, y_lines):
@@ -59,11 +61,15 @@ def load_xy_by_sentence(x_path, y_path):
         all_sentences.extend(sents)
     return all_sentences
 
+
+
 def build_index_by_lang(sentences):
     by_lang = defaultdict(list)
     for i, s in enumerate(sentences):
         by_lang[s["lang"]].append(i)
     return by_lang
+
+
 
 def construct_mixed_sentences(
     sentences,
@@ -75,8 +81,6 @@ def construct_mixed_sentences(
     require_distinct_langs=True
 ):
     available_langs = list(by_lang.keys())
-    if not available_langs:
-        raise ValueError("No languages found in input data.")
 
     mixed = []
     for _ in tqdm(range(n_output), desc="Constructing mixed datapoints", ncols=100):
@@ -122,7 +126,6 @@ def main():
 
     x_path = os.path.abspath(X_FILE)
     y_path = os.path.abspath(Y_FILE)
-    assert os.path.exists(x_path) and os.path.exists(y_path), "Input files must exist"
 
     sentences = load_xy_by_sentence(x_path, y_path)
     print(f"Loaded {len(sentences)} sentences from {x_path} and {y_path}")
@@ -145,7 +148,7 @@ def main():
     y_out = os.path.join(out_dir, f"{OUTPUT_PREFIX.replace('x_', 'y_')}.txt")
 
     save_mixed(mixed, x_out, y_out)
-    print(f"\nSaved {len(mixed)} mixed datapoints to:\n  {x_out}\n  {y_out}")
+    print(f"\nSaved to:\n  {x_out}\n  {y_out}")
 
 
 if __name__ == "__main__":

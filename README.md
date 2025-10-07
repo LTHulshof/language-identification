@@ -7,7 +7,7 @@ The goal is to build a model that can correctly classify the language of a given
 ## Features
 
 - Preprocessing of multilingual text data
-- Blablabla
+- Finetuning a XLM-RoBERTa model for language classification on the preprocessed data
 - Evaluation on multiple languages with NLP metrics
 
 ## Dataset
@@ -31,23 +31,23 @@ This will place the files inside the `data/raw/` directory.
 ## Project Structure
 
 ```text
-├── data/                       # Dataset (raw and processed)
-│   ├── wili-2018/              # Original data
-│   └── wili_preprocessed/      # Cleaned/preprocessed data
+├── data/                           # Dataset (raw and processed)
+│   ├── wili-2018/                  # Original data
+│   └── wili_preprocessed/          # Cleaned/preprocessed data
 │
-├── src/                        # Source code
-│   ├── preprocessing.py        # Text cleaning, tokenization, etc.
-│   ├── models.py               # Model architectures
-│   ├── train.py                # Training loop
-│   ├── evaluate.py             # Evaluation scripts
-│   └── utils.py                # Helper functions for training
+├── src/                            # Source code
+│   ├── preprocessing.py            # Text cleaning, tokenization, etc.
+│   ├── models.py                   # Model architectures
+│   ├── train.py                    # Training loop
+│   ├── evaluate.py                 # Evaluation scripts
+│   └── utils.py                    # Helper functions for training
+│   └── download_data.py            # Download and unzip the WiLi-2018 data
+│   └── mix_datapoint_sentence.py   # Mix sentences from a preprocessed dataset 
 │
-├── notebooks/                  # Jupyter notebooks for exploration & experiments
+├── model/                        # Saved models, logs, evaluation outputs
 │
-├── results/                    # Saved models, logs, evaluation outputs
-│
-├── pipeline.bat/pipeline.sh    # Main execute file
-├── download_data.py            # Download dataset
-├── requirements.txt            # Python dependencies
-└── README.md                   # Project documentation
+├── pipeline.bat/pipeline.sh        # Main execute file
+├── download_data.py                # Download dataset
+├── requirements.txt                # Python dependencies
+└── README.md                       # Project documentation
 ```

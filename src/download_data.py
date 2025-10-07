@@ -1,3 +1,6 @@
+"""
+Script for downloading the WiLi-2018 dataset into the ./data/wili-2018 directory.
+"""
 import os
 import urllib.request
 import zipfile
@@ -14,7 +17,7 @@ if not os.path.exists(ZIP_PATH):
     urllib.request.urlretrieve(ZIP_URL, ZIP_PATH)
     print(f"Saved ZIP to {ZIP_PATH}")
 else:
-    print("ZIP already exists, skipping download.")
+    print("ZIP already exists")
 
 # Unzip
 print("Extracting ZIP")

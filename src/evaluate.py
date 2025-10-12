@@ -5,7 +5,7 @@ Print token- and sentence-level metrics for each.
 
 import os
 import torch
-from collections import Counter
+from collections import Counter, defaultdict
 from sklearn.metrics import classification_report, accuracy_score
 from transformers import (
     XLMRobertaTokenizerFast,
@@ -100,6 +100,20 @@ def evaluate_dataset(model_dir, x_path, y_path):
         pred_majority = Counter(preds).most_common(1)[0][0]
         sent_level_labels.append(gold_majority)
         sent_level_preds.append(pred_majority)
+
+    # Separate calulcation for individual languages, not included in classification_report
+    lang_correct = defaultdict(int)
+    lang_total = defaultdict(int)
+    for y_true, y_pred in zip(all_labels, all_preds):
+        lang_total[y_true] += 1
+        if y_true == y_pred:
+            lang_correct[y_true] += 1
+
+    print("Per-language accuracy:")
+    for lang in sorted(lang_total.keys()):
+        acc = lang_correct[lang] / lang_total[lang]
+        print(f"  {lang}: {acc:.4f}")
+
 
     # Token-level metrics
     acc_token = accuracy_score(all_labels, all_preds)

@@ -23,6 +23,7 @@ venv/
 # ----------------------------
 # Raw and processed data
 data/
+model/
 # Model outputs, logs, checkpoints
 results/
 checkpoints/

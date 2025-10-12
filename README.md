@@ -45,7 +45,9 @@ This will place the files inside the `data/raw/` directory.
 │   └── download_data.py            # Download and unzip the WiLi-2018 data
 │   └── mix_datapoint_sentence.py   # Mix sentences from a preprocessed dataset 
 │
-├── model/                        # Saved models, logs, evaluation outputs
+├── model/                          # Saved models, logs, evaluation outputs
+│
+├── plots/                          # Plotting scripts
 │
 ├── pipeline.bat/pipeline.sh        # Main execute file, train a single XLM roberta model
 ├── download_data.py                # Download dataset

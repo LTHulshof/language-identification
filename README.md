@@ -39,14 +39,15 @@ This will place the files inside the `data/raw/` directory.
 │   ├── preprocessing.py            # Text cleaning, tokenization, etc.
 │   ├── models.py                   # Model architectures
 │   ├── train.py                    # Training loop
-│   ├── evaluate.py                 # Evaluation scripts
+│   ├── evaluate.py                 # Evaluation scripts for testing model
+│   ├── evaluate_labels.py          # Evaluation script for comparing two label files.
 │   └── utils.py                    # Helper functions for training
 │   └── download_data.py            # Download and unzip the WiLi-2018 data
 │   └── mix_datapoint_sentence.py   # Mix sentences from a preprocessed dataset 
 │
 ├── model/                        # Saved models, logs, evaluation outputs
 │
-├── pipeline.bat/pipeline.sh        # Main execute file
+├── pipeline.bat/pipeline.sh        # Main execute file, train a single XLM roberta model
 ├── download_data.py                # Download dataset
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project documentation

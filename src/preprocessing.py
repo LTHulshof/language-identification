@@ -273,25 +273,25 @@ def process_and_translate(x_file, y_file, out_prefix, replace_nouns=True, replac
 # )
 
 
-# Default testing data preprocessing
-process_and_translate(
-    os.path.join(WILI_SUBSET_DIR, "x_test.txt"),
-    os.path.join(WILI_SUBSET_DIR, "y_test.txt"),
-    out_prefix="x_test",
-    replace_nouns=True,
-    replace_spans=True,
-    replace_noun_freq=0.5,
-    replace_span_freq=0.5
-)
+# # Default testing data preprocessing
+# process_and_translate(
+#     os.path.join(WILI_SUBSET_DIR, "x_test.txt"),
+#     os.path.join(WILI_SUBSET_DIR, "y_test.txt"),
+#     out_prefix="x_test",
+#     replace_nouns=True,
+#     replace_spans=True,
+#     replace_noun_freq=0.5,
+#     replace_span_freq=0.5
+# )
 
 # Additional data generation to check translation span performance.
-for i in [0.0, 0.2, 0.4, 0.6, 0.8, 1]:
+for i in [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]:
     process_and_translate(
         os.path.join(WILI_SUBSET_DIR, "x_test.txt"),
         os.path.join(WILI_SUBSET_DIR, "y_test.txt"),
         out_prefix="x_test",
         replace_nouns=False,
         replace_spans=True,
-        replace_noun_freq=0.0,
+        replace_noun_freq=i,
         replace_span_freq=i
     )

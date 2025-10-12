@@ -32,9 +32,6 @@ def parse_args():
 
 
 def main():
-
-
-    
     args = parse_args()
     
     SRC_DIR = os.path.dirname(os.path.abspath(__file__))

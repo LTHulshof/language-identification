@@ -22,7 +22,7 @@ MAX_SENTENCES = 4           # Maximum number of source sentences per mixed datap
 NO_REUSE = True            # Do not reuse the same source sentence inside one mixed datapoint
 ALLOW_DUP_LANG = True      # Allow multiple sentences of the same language in one mixed datapoint
 
-RANDOM_SEED = 42           # Seed for reproducibility
+RANDOM_SEED = 42
 
 
 
